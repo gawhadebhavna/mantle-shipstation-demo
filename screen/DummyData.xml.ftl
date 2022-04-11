@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Orders>
+    <Order>
+        <OrderID>
+            <![CDATA[${"100306"}]]>
+        </OrderID>
+        <OrderNumber>
+            <![CDATA[${"Test_1"}]]>
+        </OrderNumber>
+        <OrderDate>${"2022-04-11"}</OrderDate>
+        <OrderStatus>
+            <![CDATA[${"OrderPlaced"}]]>
+        </OrderStatus>
+        <LastModified>${"2022-04-11"}</LastModified>
+        <ShippingMethod>
+            <![CDATA[${"Next Day Standard"}]]>
+        </ShippingMethod>
+        <CurrencyCode>${"USD"}</CurrencyCode>
+        <OrderTotal>${"28.32"}</OrderTotal>
+        <ShippingAmount>${"10"}</ShippingAmount>
+        <CustomerNotes>
+            <![CDATA[]]>
+        </CustomerNotes>
+        <InternalNotes>
+            <![CDATA[]]>
+        </InternalNotes>
+        <Gift></Gift>
+        <GiftMessage></GiftMessage>
+        <Customer>
+            <CustomerCode>
+                <![CDATA[${"joe@public.com"}]]>
+            </CustomerCode>
+            <BillTo>
+                <Name>
+                    <![CDATA[${"Luther H"}]]>
+                </Name>
+                <Phone>
+                    <![CDATA[${"234-5677"}]]>
+                </Phone>
+                <Email>
+                    <![CDATA[${"joe@public.com"}]]>
+                </Email>
+            </BillTo>
+            <ShipTo>
+                <Name>
+                    <![CDATA[${"Stephen A Smith"}]]>
+                </Name>
+                <Address1>
+                    <![CDATA[${"3964 Cecil Street"}]]>
+                </Address1>
+                <Address2></Address2>
+                <City>
+                    <![CDATA[${"Chicago"}]]>
+                </City>
+                <State>
+                    <![CDATA[${"IL"}]]>
+                </State>
+                <PostalCode>
+                    <![CDATA[${"60606"}]]>
+                </PostalCode>
+                <Country>
+                    <![CDATA[${"US"}]]>
+                </Country>
+                <Phone>
+                    <![CDATA[]]>
+                </Phone>
+            </ShipTo>
+        </Customer>
+        <Items>
+            <Item>
+                <SKU>
+                    <![CDATA[${"DEMO UNIT"}]]>
+                </SKU>
+                <Name>
+                    <![CDATA[${"my Demo Product One Unit"}]]>
+                </Name>
+                <Quantity>${"1"}</Quantity>
+                <UnitPrice>${"16.99"}</UnitPrice>
+            </Item>
+        </Items>
+    </Order>
+</Orders>
