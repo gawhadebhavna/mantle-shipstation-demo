@@ -9,4 +9,9 @@
             <service name="mantle.shipstation.ShipStationServices.get#OrderData"/>
         </method>
     </resource>
+    <resource name="dummyOrder">
+        <method type="get">
+            <service name="mantle.shipstation.ShipStationDummyService.get#Order"/>
+        </method>
+    </resource>
 </resource>
