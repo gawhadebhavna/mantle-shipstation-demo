@@ -13,11 +13,11 @@
               <OrderNumber>
                  <![CDATA[${order.orderName!}]]>
               </OrderNumber>
-              <OrderDate>${order.placedDate!}</OrderDate>
+              <OrderDate>${ec.l10n.format(orderHeaderAndPart.placedDate,'MM/dd/yyyy HH:MM')}</OrderDate>
               <OrderStatus>
                  <![CDATA[${part.partStatusId!}]]>
               </OrderStatus>
-              <LastModified>${ec.l10n.format(orderHeaderAndPart.lastUpdatedStamp,'yyyy-MM-dd HH:MM')}</LastModified>
+              <LastModified>${ec.l10n.format(orderHeaderAndPart.lastUpdatedStamp,'MM/dd/yyyy HH:MM')}</LastModified>
               <#assign shipmentMethod = ec.entity.find("moqui.basic.Enumeration").condition("enumId",part.shipmentMethodEnumId!).useCache(true).one()>
               <ShippingMethod>
                  <![CDATA[${shipmentMethod.description!}]]>
