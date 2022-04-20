@@ -13,7 +13,7 @@
             </parameter>
         </in-parameters>
         <actions>
-            <set field="Orders" from="[]"/>
+<!--            <set field="Orders" from="[]"/>-->
             <script>
                 def response = ec.web.getResponse();
                 def context =
