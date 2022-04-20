@@ -7,11 +7,11 @@
         <OrderNumber>
             <![CDATA[${"Test_1"}]]>
         </OrderNumber>
-        <OrderDate>${"2022-04-11"}</OrderDate>
+        <OrderDate>${"2022/04/11"}</OrderDate>
         <OrderStatus>
             <![CDATA[${"OrderPlaced"}]]>
         </OrderStatus>
-        <LastModified>${"2022-04-11"}</LastModified>
+        <LastModified>${"2022/04/11"}</LastModified>
         <ShippingMethod>
             <![CDATA[${"Next Day Standard"}]]>
         </ShippingMethod>
