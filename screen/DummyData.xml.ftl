@@ -24,8 +24,8 @@
         <InternalNotes>
             <![CDATA[]]>
         </InternalNotes>
-        <Gift></Gift>
-        <GiftMessage></GiftMessage>
+        <Gift><![CDATA[${"true"}]]></Gift>
+        <GiftMessage><![CDATA[${"Gift"}]]></GiftMessage>
         <Customer>
             <CustomerCode>
                 <![CDATA[${"joe@public.com"}]]>
