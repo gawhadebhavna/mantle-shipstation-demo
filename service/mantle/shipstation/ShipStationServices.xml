@@ -11,9 +11,10 @@
             <parameter name="end_date" type="Timestamp" format="MM/dd/yyyy HH:mm">
                 <description>Find orders that are placed on this date or before this date</description>
             </parameter>
+            <parameter name="page"/>
         </in-parameters>
         <actions>
-<!--            <set field="Orders" from="[]"/>-->
+            <log message="=========================start_date:${start_date}========="/>
             <script>
                 def response = ec.web.getResponse();
                 def context =
@@ -27,6 +28,12 @@
                 w.close()
             </script>
         </actions>
+    </service>
+    <service verb="post" noun="ShipNotification">
+        <in-parameters>
+            <parameter name="orderNumber"/>
+            <parameter name="carrier"/>
+        </in-parameters>
     </service>
 
 
