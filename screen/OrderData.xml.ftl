@@ -42,7 +42,13 @@
               <InternalNotes>
                  <![CDATA[${part.shippingInstructions!}]]>
               </InternalNotes>
-              <Gift>${orderHeaderAndPart.isGift!}</Gift>
+              <Gift>
+                <#if orderHeaderAndPart.isGift == "Y">
+                 <![CDATA[${"true"}]]>
+                <#else>
+                 <![CDATA[${"false"}]]>
+                </#if>
+              </Gift>
               <GiftMessage>${orderHeaderAndPart.giftMessage!}</GiftMessage>
               <Customer>
                  <CustomerCode>
