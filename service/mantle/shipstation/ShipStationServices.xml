@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-2.1.xsd">
-    <!-- This service will get data -->
     <service verb="get" noun="OrderData">
         <in-parameters>
             <parameter name="start_date" type="Timestamp" format="MM/dd/yyyy HH:mm">
@@ -10,7 +9,6 @@
             <parameter name="end_date" type="Timestamp" format="MM/dd/yyyy HH:mm">
                 <description>Find orders that are placed on this date or before this date</description>
             </parameter>
-            <parameter name="page"/>
         </in-parameters>
         <actions>
             <script>
@@ -60,7 +58,7 @@
                 <script>
                     itemList.add([sku:sku,name:name,quantity:quantity,lineItemId:lineItemId])
                 </script>
-            </iterate>
         </actions>
     </service>
+
 </services>
