@@ -2,7 +2,6 @@
 <services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-2.1.xsd">
     <!-- This service will get data -->
-
     <service verb="get" noun="OrderData">
         <in-parameters>
             <parameter name="start_date" type="Timestamp" format="MM/dd/yyyy HH:mm">
@@ -14,7 +13,6 @@
             <parameter name="page"/>
         </in-parameters>
         <actions>
-            <log message="=========================start_date:${start_date}========="/>
             <script>
                 def response = ec.web.getResponse();
                 def context =
@@ -29,45 +27,4 @@
             </script>
         </actions>
     </service>
-    <service verb="post" noun="ShipNotification">
-        <in-parameters>
-            <parameter name="orderNumber"/>
-            <parameter name="carrier"/>
-            <parameter name="service"/>
-            <parameter name="trackingNumber"/>
-        </in-parameters>
-        <actions>
-            <!--Getting response data from the XML-->
-            <set field="XmlData" from="ec.web.getRequestBodyText()"/>
-            <!--Data parsing in the rootNode using XmlParser()-->
-            <set field="rootNode" from="new XmlParser().parseText(XmlData)"/>
-            <!-- Empty list to store the Items -->
-            <set field="itemList" from="[]"/>
-            <!-- Preparing the data -->
-            <set field="orderId" from="rootNode.'OrderID'.text()"/>
-            <set field="shipDate" from="rootNode.'ShipDate'.text()"/>
-            <set field="carrier" from="rootNode.'Carrier'.text()"/>
-            <set field="trackingNo" from="rootNode.'TrackingNumber'.text()"/>
-            <set field="labelDate" from="rootNode.'LabelCreateDate'.text()"/>
-            <!-- Date formatting using groovy -->
-            <script>
-                def shippingDate = Date.parse("MM/dd/yyyy",shipDate).format("yyyy-MM-dd")
-                def labelCreateDate = Date.parse("MM/dd/yyyy HH:mm", labelDate).format("yyyy-MM-dd HH:mm")
-            </script>
-            <!-- Iterating the itemList from the XML item tag -->
-            <iterate list="rootNode.'Items'.'Item'" entry="item">
-                <set field="sku" from="item.'SKU'.text()"/>
-                <set field="name" from="item.'Name'.text()"/>
-                <set field="quantity" from="Integer.valueOf(item.'Quantity'.text())"/>
-                <set field="lineItemId" from="item.'LineItemID'.text()"/>
-                <script>
-                    itemList.add([sku:sku,name:name,quantity:quantity,lineItemId:lineItemId])
-                </script>
-            </iterate>
-            <log message="==================itemList:${itemList}=========================="/>
-
-        </actions>
-    </service>
-
-
 </services>
