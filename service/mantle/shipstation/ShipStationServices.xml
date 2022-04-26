@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-2.1.xsd">
-    <!-- This service will get data -->
-
     <service verb="get" noun="OrderData">
         <in-parameters>
             <parameter name="start_date" type="Timestamp" format="MM/dd/yyyy HH:mm">
@@ -13,7 +11,6 @@
             </parameter>
         </in-parameters>
         <actions>
-<!--            <set field="Orders" from="[]"/>-->
             <script>
                 def response = ec.web.getResponse();
                 def context =
